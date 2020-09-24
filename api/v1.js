@@ -50,7 +50,7 @@ function handleGetAll(request, response, next) {
 }
 
 function handleGetOne(request, response, next) {
-  req.model.get({ _id: request.params.id })
+  request.model.get({ _id: request.params.id })
     .then(result => response.status(200).json(result[0]))
     .catch(next);
 }
@@ -68,7 +68,7 @@ function handlePut(request, response, next) {
 }
 
 function handleDelete(request, response, next) {
-  request.model.destroy(request.params.id)
+  request.model.delete(request.params.id)
     .then(result => response.status(200).json(result))
     .catch(next);
 }

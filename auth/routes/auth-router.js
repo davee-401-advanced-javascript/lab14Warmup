@@ -25,9 +25,9 @@ router.post('/signup', async (req, res, next) => {
 
     let token = record.generateToken();
 
-    res.set('auth', req.token);
+    res.set('auth', token);
     let object = {
-      token: req.token,
+      token: token,
       user: newUser
     }
     res.status(200).json(object);

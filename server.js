@@ -27,5 +27,5 @@ app.use(errorHandler);
 
 module.exports = {
   app,
-  startup: (port) => app.listen(port, console.log('up on', port))
+  start: (port) => app.listen(port, console.log('up on', port))
 }
